@@ -262,7 +262,7 @@ export default function ContactUs() {
                 <div>
                   <p className="text-sm text-gray-600">Phone</p>
                   <p className="font-medium text-gray-900">
-                    +1 (555) 555-5555
+                    +1 239 299 2023
                   </p>
                 </div>
               </div>
