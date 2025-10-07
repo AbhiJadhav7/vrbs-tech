@@ -11,7 +11,7 @@ export default function HeroBackground() {
 
   return (
     <motion.div
-      className="absolute inset-0 z-1000 overflow-hidden pointer-events-none"
+      className="absolute inset-0 -z[-1] overflow-hidden pointer-events-none hidden sm:block"
       aria-hidden="true"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -42,7 +42,7 @@ export default function HeroBackground() {
 
       {/* Bottom right glow */}
       <motion.div
-        className="absolute w-[500px] h-[500px] bg-teal-300/25 rounded-full blur-[150px]"
+        className="absolute w-[500px] h-[500px] bg-teal-300/65 rounded-full blur-[150px]"
         style={{
           bottom: "-15%",
           right: "-15%",
@@ -52,8 +52,8 @@ export default function HeroBackground() {
         animate={{
           opacity: 1,
           scale: 1,
-          x: [0, -50, 950, 0],
-          y: [0, 20, -100, 0],
+          x: [0, -50, 150, 0],
+          y: [0, 20, -70, 0],
         }}
         transition={{
           opacity: { duration: 2.2, ease: "easeOut", delay: 0.3 },
