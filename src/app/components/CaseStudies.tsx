@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import { ShoppingCart, DollarSign, TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 const headingText = "Transform Your Future with AI-Powered Solutions";
 
@@ -57,12 +58,12 @@ export default function CaseStudies() {
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           {/* Back to Home Link */}
-          <a href="/#Hero" className="inline-flex items-center text-gray-600 hover:text-gray-900 mt-8 mb-8 transition">
+          <Link href="/#Hero" className="inline-flex items-center text-gray-600 hover:text-gray-900 mt-8 mb-8 transition">
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Home
-          </a>
+          </Link>
 
           {/* Section Header */}
           <motion.div
