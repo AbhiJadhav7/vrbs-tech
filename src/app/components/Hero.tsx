@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants, useScroll, useTransform } from "framer-motion";
+import HeroBackground from "./HeroBackground";
 
 const headingText = "Transform Your Future with AI-Powered Solutions";
 
@@ -45,7 +46,7 @@ export default function Hero() {
 
   return (
     <section className="relative flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-24 min-h-screen bg-gradient-to-br from-white via-white to-[#f8ffff]">
-      
+      <HeroBackground/>
       {/* Heading */}
       <motion.h1
         variants={container}
