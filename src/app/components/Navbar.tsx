@@ -1,18 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Menu, X } from "lucide-react"; // assuming you used these for hamburger
+import { Menu, X } from "lucide-react";
+
 gsap.registerPlugin(ScrollToPlugin);
 
 const navLinks = [
   { href: "solutions", label: "Solutions", type: "scroll" },
   { href: "about-us", label: "About Us", type: "scroll" },
-
   { href: "process", label: "Process", type: "scroll" },
   { href: "case-studies", label: "Case Studies", type: "page" },
 ];
@@ -36,10 +37,30 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* ✅ VRBS Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900 tracking-tight">
-          VRBS
-        </Link>
+        {/* ✅ VRBS Logo Image */}
+        <Link
+  href="/"
+  className="flex items-center space-x-2"
+  onClick={(e) => {
+    if (pathname === "/") {
+      e.preventDefault(); // stop full reload
+      gsap.to(window, {
+        duration: 1.2,
+        scrollTo: { y: 0 },
+        ease: "power3.inOut",
+      });
+    }
+  }}
+>
+  <Image
+    src="/logo.png"
+    alt="VRBS Logo"
+    width={200}
+    height={120}
+    priority
+    className="object-contain w-28 h-14 md:w-48 md:h-24 "
+  />
+</Link>
 
         {/* ✅ Desktop Nav */}
         <ul className="hidden md:flex items-center space-x-8">

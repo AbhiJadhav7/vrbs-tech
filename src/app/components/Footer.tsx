@@ -1,13 +1,53 @@
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import gsap from "gsap";
+
 export default function Footer() {
+  const pathname = usePathname();
+  
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8 border-t border-gray-100">
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           {/* Left Section */}
-          <div className="mx-auto max-w-sm lg:max-w-none">
-            <h2 className="text-3xl font-bold text-teal-600">VRBS</h2>
-            <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
+          <div className="mx-auto max-w-sm lg:max-w-none ">
+            
+
+
+          <Link
+  href="/"
+  className="flex items-center justify-center space-x-2"
+  onClick={(e) => {
+    if (pathname === "/") {
+      e.preventDefault(); // stop full reload
+      gsap.to(window, {
+        duration: 1.2,
+        scrollTo: { y: 0 },
+        ease: "power3.inOut",
+      });
+    }
+  }}
+>
+  <Image
+    src="/logo.png"
+    alt="VRBS Logo"
+    width={200}
+    height={120}
+    priority
+    className="object-contain"
+  />
+</Link>
+
+
+
+
+
+
+
+
+            <p className="mt-4 text-center text-gray-500 lg:text-center lg:text-lg">
               Empowering businesses through AI-powered digital transformation. Building the future, one innovation at a time.
             </p>
 
